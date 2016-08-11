@@ -4,4 +4,5 @@ class Company < ActiveRecord::Base
   has_many :users
   has_many :addressbooks
   has_many :invoices
+  validates_formatting_of :billing_email_address, using: :email
 end
