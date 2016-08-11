@@ -1,0 +1,2 @@
+json.extract! recipient, :id, :address_id, :recipient_name, :recipient_job_title, :recipient_email_address, :recipient_phone_number, :address_id, :parcel_id, :created_at, :updated_at
+json.url recipient_url(recipient, format: :json)

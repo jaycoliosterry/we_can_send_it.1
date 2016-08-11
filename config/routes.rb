@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :recipients
+
   resources :trackings
 
   resources :invoices

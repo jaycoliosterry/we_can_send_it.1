@@ -1,0 +1,17 @@
+<%= simple_form_for(@recipient) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :address_id %>
+    <%= f.input :recipient_name %>
+    <%= f.input :recipient_job_title %>
+    <%= f.input :recipient_email_address %>
+    <%= f.input :recipient_phone_number %>
+    <%= f.association :address %>
+    <%= f.association :parcel %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

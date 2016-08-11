@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @recipient.address_id %>
+</p>
+
+<p>
+  <strong>Recipient name:</strong>
+  <%= @recipient.recipient_name %>
+</p>
+
+<p>
+  <strong>Recipient job title:</strong>
+  <%= @recipient.recipient_job_title %>
+</p>
+
+<p>
+  <strong>Recipient email address:</strong>
+  <%= @recipient.recipient_email_address %>
+</p>
+
+<p>
+  <strong>Recipient phone number:</strong>
+  <%= @recipient.recipient_phone_number %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @recipient.address %>
+</p>
+
+<p>
+  <strong>Parcel:</strong>
+  <%= @recipient.parcel %>
+</p>
+
+<%= link_to 'Edit', edit_recipient_path(@recipient) %> |
+<%= link_to 'Back', recipients_path %>
