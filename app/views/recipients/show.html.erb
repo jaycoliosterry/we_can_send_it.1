@@ -1,39 +1,32 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Recipient -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Recipient %></h1>
+</div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @recipient.address_id %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:address_id) %></dt>
+      <dd><pre class="prettyprint"><%= @recipient.address_id %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:recipient_name) %></dt>
+      <dd><pre class="prettyprint"><%= @recipient.recipient_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:recipient_job_title) %></dt>
+      <dd><pre class="prettyprint"><%= @recipient.recipient_job_title %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:recipient_email_address) %></dt>
+      <dd><pre class="prettyprint"><%= @recipient.recipient_email_address %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:recipient_phone_number) %></dt>
+      <dd><pre class="prettyprint"><%= @recipient.recipient_phone_number %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Recipient name:</strong>
-  <%= @recipient.recipient_name %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              recipients_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_recipient_path(@recipient), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              recipient_path(@recipient),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Recipient job title:</strong>
-  <%= @recipient.recipient_job_title %>
-</p>
-
-<p>
-  <strong>Recipient email address:</strong>
-  <%= @recipient.recipient_email_address %>
-</p>
-
-<p>
-  <strong>Recipient phone number:</strong>
-  <%= @recipient.recipient_phone_number %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @recipient.address %>
-</p>
-
-<p>
-  <strong>Parcel:</strong>
-  <%= @recipient.parcel %>
-</p>
-
-<%= link_to 'Edit', edit_recipient_path(@recipient) %> |
-<%= link_to 'Back', recipients_path %>

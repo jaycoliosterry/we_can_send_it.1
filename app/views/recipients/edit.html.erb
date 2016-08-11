@@ -1,6 +1,5 @@
-<h1>Editing recipient</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @recipient %> |
-<%= link_to 'Back', recipients_path %>
+<%- model_class = Recipient -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Recipient %></h1>
+</div>
+<%= render :partial => 'form' %>
