@@ -1,39 +1,34 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Tracking -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Tracking %></h1>
+</div>
 
-<p>
-  <strong>Parcel:</strong>
-  <%= @tracking.parcel %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:signed_for_by) %></dt>
+      <dd><pre class="prettyprint"><%= @tracking.signed_for_by %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:tracking_code) %></dt>
+      <dd><pre class="prettyprint"><%= @tracking.tracking_code %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:tracking_status) %></dt>
+      <dd><pre class="prettyprint"><%= @tracking.tracking_status %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:tracking_status_description) %></dt>
+      <dd><pre class="prettyprint"><%= @tracking.tracking_status_description %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:required_to_arrive_before) %></dt>
+      <dd><pre class="prettyprint"><%= @tracking.required_to_arrive_before %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:will_arrive_in_time) %></dt>
+      <dd><pre class="prettyprint"><%= @tracking.will_arrive_in_time %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Signed for by:</strong>
-  <%= @tracking.signed_for_by %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              trackings_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_tracking_path(@tracking), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              tracking_path(@tracking),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Tracking code:</strong>
-  <%= @tracking.tracking_code %>
-</p>
-
-<p>
-  <strong>Tracking status:</strong>
-  <%= @tracking.tracking_status %>
-</p>
-
-<p>
-  <strong>Tracking status description:</strong>
-  <%= @tracking.tracking_status_description %>
-</p>
-
-<p>
-  <strong>Required to arrive before:</strong>
-  <%= @tracking.required_to_arrive_before %>
-</p>
-
-<p>
-  <strong>Will arrive in time:</strong>
-  <%= @tracking.will_arrive_in_time %>
-</p>
-
-<%= link_to 'Edit', edit_tracking_path(@tracking) %> |
-<%= link_to 'Back', trackings_path %>
