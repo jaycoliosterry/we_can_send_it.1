@@ -1,19 +1,52 @@
-<%= simple_form_for(@invoice) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :company %>
-    <%= f.input :invoice_number %>
-    <%= f.input :issue_date %>
-    <%= f.input :due_date %>
-    <%= f.input :paid %>
-    <%= f.input :sales_tax_applicable %>
-    <%= f.input :emailed_to_client %>
-    <%= f.input :purchase_order_number %>
-    <%= f.association :invoice_line_item %>
+<%= form_for @invoice, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :invoice_number, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :invoice_number, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :issue_date, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.date_select :issue_date, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :due_date, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.date_select :due_date, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :paid, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :paid, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :sales_tax_applicable, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :sales_tax_applicable, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :emailed_to_client, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :emailed_to_client, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :purchase_order_number, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :purchase_order_number, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  invoices_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

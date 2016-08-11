@@ -1,49 +1,36 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Invoice -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Invoice %></h1>
+</div>
 
-<p>
-  <strong>Company:</strong>
-  <%= @invoice.company %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:invoice_number) %></dt>
+      <dd><pre class="prettyprint"><%= @invoice.invoice_number %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:issue_date) %></dt>
+      <dd><pre class="prettyprint"><%= @invoice.issue_date %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:due_date) %></dt>
+      <dd><pre class="prettyprint"><%= @invoice.due_date %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:paid) %></dt>
+      <dd><pre class="prettyprint"><%= @invoice.paid %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:sales_tax_applicable) %></dt>
+      <dd><pre class="prettyprint"><%= @invoice.sales_tax_applicable %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:emailed_to_client) %></dt>
+      <dd><pre class="prettyprint"><%= @invoice.emailed_to_client %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:purchase_order_number) %></dt>
+      <dd><pre class="prettyprint"><%= @invoice.purchase_order_number %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Invoice number:</strong>
-  <%= @invoice.invoice_number %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              invoices_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_invoice_path(@invoice), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              invoice_path(@invoice),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Issue date:</strong>
-  <%= @invoice.issue_date %>
-</p>
-
-<p>
-  <strong>Due date:</strong>
-  <%= @invoice.due_date %>
-</p>
-
-<p>
-  <strong>Paid:</strong>
-  <%= @invoice.paid %>
-</p>
-
-<p>
-  <strong>Sales tax applicable:</strong>
-  <%= @invoice.sales_tax_applicable %>
-</p>
-
-<p>
-  <strong>Emailed to client:</strong>
-  <%= @invoice.emailed_to_client %>
-</p>
-
-<p>
-  <strong>Purchase order number:</strong>
-  <%= @invoice.purchase_order_number %>
-</p>
-
-<p>
-  <strong>Invoice line item:</strong>
-  <%= @invoice.invoice_line_item %>
-</p>
-
-<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
-<%= link_to 'Back', invoices_path %>
