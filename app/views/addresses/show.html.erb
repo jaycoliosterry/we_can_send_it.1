@@ -1,84 +1,48 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Address -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Address %></h1>
+</div>
 
-<p>
-  <strong>Receiver company:</strong>
-  <%= @address.receiver_company_id %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:receiver_company_id) %></dt>
+      <dd><pre class="prettyprint"><%= @address.receiver_company_id %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:receiver_company_name) %></dt>
+      <dd><pre class="prettyprint"><%= @address.receiver_company_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:receiver_company_contact_name) %></dt>
+      <dd><pre class="prettyprint"><%= @address.receiver_company_contact_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:address_book_id) %></dt>
+      <dd><pre class="prettyprint"><%= @address.address_book_id %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:address_line_1) %></dt>
+      <dd><pre class="prettyprint"><%= @address.address_line_1 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:address_line_2) %></dt>
+      <dd><pre class="prettyprint"><%= @address.address_line_2 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:zip_or_postcode) %></dt>
+      <dd><pre class="prettyprint"><%= @address.zip_or_postcode %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:city) %></dt>
+      <dd><pre class="prettyprint"><%= @address.city %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:state_or_region) %></dt>
+      <dd><pre class="prettyprint"><%= @address.state_or_region %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:country_id) %></dt>
+      <dd><pre class="prettyprint"><%= @address.country_id %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:brazilian_federal_tax_id) %></dt>
+      <dd><pre class="prettyprint"><%= @address.brazilian_federal_tax_id %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:brazilian_state_tax_id) %></dt>
+      <dd><pre class="prettyprint"><%= @address.brazilian_state_tax_id %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:chinese_cr_code) %></dt>
+      <dd><pre class="prettyprint"><%= @address.chinese_cr_code %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Receiver company name:</strong>
-  <%= @address.receiver_company_name %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              addresses_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_address_path(@address), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              address_path(@address),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Receiver company contact name:</strong>
-  <%= @address.receiver_company_contact_name %>
-</p>
-
-<p>
-  <strong>Address book:</strong>
-  <%= @address.address_book_id %>
-</p>
-
-<p>
-  <strong>Addressbook:</strong>
-  <%= @address.addressbook %>
-</p>
-
-<p>
-  <strong>Address line 1:</strong>
-  <%= @address.address_line_1 %>
-</p>
-
-<p>
-  <strong>Address line 2:</strong>
-  <%= @address.address_line_2 %>
-</p>
-
-<p>
-  <strong>Zip or postcode:</strong>
-  <%= @address.zip_or_postcode %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @address.city %>
-</p>
-
-<p>
-  <strong>State or region:</strong>
-  <%= @address.state_or_region %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @address.country_id %>
-</p>
-
-<p>
-  <strong>Brazilian federal tax:</strong>
-  <%= @address.brazilian_federal_tax_id %>
-</p>
-
-<p>
-  <strong>Brazilian state tax:</strong>
-  <%= @address.brazilian_state_tax_id %>
-</p>
-
-<p>
-  <strong>Chinese cr code:</strong>
-  <%= @address.chinese_cr_code %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @address.user %>
-</p>
-
-<p>
-  <strong>Parcel:</strong>
-  <%= @address.parcel %>
-</p>
-
-<%= link_to 'Edit', edit_address_path(@address) %> |
-<%= link_to 'Back', addresses_path %>

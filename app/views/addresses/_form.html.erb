@@ -1,26 +1,88 @@
-<%= simple_form_for(@address) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :receiver_company_id %>
-    <%= f.input :receiver_company_name %>
-    <%= f.input :receiver_company_contact_name %>
-    <%= f.input :address_book_id %>
-    <%= f.association :addressbook %>
-    <%= f.input :address_line_1 %>
-    <%= f.input :address_line_2 %>
-    <%= f.input :zip_or_postcode %>
-    <%= f.input :city %>
-    <%= f.input :state_or_region %>
-    <%= f.input :country_id %>
-    <%= f.input :brazilian_federal_tax_id %>
-    <%= f.input :brazilian_state_tax_id %>
-    <%= f.input :chinese_cr_code %>
-    <%= f.association :user %>
-    <%= f.association :parcel %>
+<%= form_for @address, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :receiver_company_id, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :receiver_company_id, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :receiver_company_name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :receiver_company_name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :receiver_company_contact_name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :receiver_company_contact_name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :address_book_id, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :address_book_id, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :address_line_1, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :address_line_1, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :address_line_2, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :address_line_2, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :zip_or_postcode, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :zip_or_postcode, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :city, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :city, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :state_or_region, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :state_or_region, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :country_id, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :country_id, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :brazilian_federal_tax_id, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :brazilian_federal_tax_id, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :brazilian_state_tax_id, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :brazilian_state_tax_id, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :chinese_cr_code, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :chinese_cr_code, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  addresses_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
