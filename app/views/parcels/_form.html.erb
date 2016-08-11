@@ -1,26 +1,100 @@
-<%= simple_form_for(@parcel) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :order %>
-    <%= f.input :customer_shipment_cost_pre_tax %>
-    <%= f.input :taxable %>
-    <%= f.input :tax_rate %>
-    <%= f.input :tax %>
-    <%= f.input :customer_shipment_cost_with_tax %>
-    <%= f.input :parcel_items_and_quantity %>
-    <%= f.input :weight_of_parcel %>
-    <%= f.input :customs_short_declaration %>
-    <%= f.input :customs_long_description %>
-    <%= f.input :parcel_height %>
-    <%= f.input :parcel_length %>
-    <%= f.input :parcel_width %>
-    <%= f.input :parcel_number_in_order %>
-    <%= f.input :internal_cost_of_parcel %>
-    <%= f.input :shipping_carrier %>
+<%= form_for @parcel, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :customer_shipment_cost_pre_tax, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :customer_shipment_cost_pre_tax, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :taxable, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :taxable, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :tax_rate, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :tax_rate, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :tax, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :tax, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :customer_shipment_cost_with_tax, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :customer_shipment_cost_with_tax, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :parcel_items_and_quantity, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :parcel_items_and_quantity, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :weight_of_parcel, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :weight_of_parcel, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :customs_short_declaration, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :customs_short_declaration, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :customs_long_description, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :customs_long_description, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :parcel_height, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :parcel_height, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :parcel_length, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :parcel_length, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :parcel_width, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :parcel_width, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :parcel_number_in_order, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :parcel_number_in_order, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :internal_cost_of_parcel, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :internal_cost_of_parcel, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :shipping_carrier, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :shipping_carrier, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  parcels_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

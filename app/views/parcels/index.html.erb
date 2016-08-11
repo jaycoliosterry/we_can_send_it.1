@@ -1,32 +1,34 @@
-<h1>Listing parcels</h1>
-
-<table>
+<%- model_class = Parcel -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Parcel %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Order</th>
-      <th>Customer shipment cost pre tax</th>
-      <th>Taxable</th>
-      <th>Tax rate</th>
-      <th>Tax</th>
-      <th>Customer shipment cost with tax</th>
-      <th>Parcel items and quantity</th>
-      <th>Weight of parcel</th>
-      <th>Customs short declaration</th>
-      <th>Customs long description</th>
-      <th>Parcel height</th>
-      <th>Parcel length</th>
-      <th>Parcel width</th>
-      <th>Parcel number in order</th>
-      <th>Internal cost of parcel</th>
-      <th>Shipping carrier</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:customer_shipment_cost_pre_tax) %></th>
+      <th><%= model_class.human_attribute_name(:taxable) %></th>
+      <th><%= model_class.human_attribute_name(:tax_rate) %></th>
+      <th><%= model_class.human_attribute_name(:tax) %></th>
+      <th><%= model_class.human_attribute_name(:customer_shipment_cost_with_tax) %></th>
+      <th><%= model_class.human_attribute_name(:parcel_items_and_quantity) %></th>
+      <th><%= model_class.human_attribute_name(:weight_of_parcel) %></th>
+      <th><%= model_class.human_attribute_name(:customs_short_declaration) %></th>
+      <th><%= model_class.human_attribute_name(:customs_long_description) %></th>
+      <th><%= model_class.human_attribute_name(:parcel_height) %></th>
+      <th><%= model_class.human_attribute_name(:parcel_length) %></th>
+      <th><%= model_class.human_attribute_name(:parcel_width) %></th>
+      <th><%= model_class.human_attribute_name(:parcel_number_in_order) %></th>
+      <th><%= model_class.human_attribute_name(:internal_cost_of_parcel) %></th>
+      <th><%= model_class.human_attribute_name(:shipping_carrier) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @parcels.each do |parcel| %>
       <tr>
-        <td><%= parcel.order %></td>
+        <td><%= parcel.id %></td>
         <td><%= parcel.customer_shipment_cost_pre_tax %></td>
         <td><%= parcel.taxable %></td>
         <td><%= parcel.tax_rate %></td>
@@ -42,14 +44,21 @@
         <td><%= parcel.parcel_number_in_order %></td>
         <td><%= parcel.internal_cost_of_parcel %></td>
         <td><%= parcel.shipping_carrier %></td>
-        <td><%= link_to 'Show', parcel %></td>
-        <td><%= link_to 'Edit', edit_parcel_path(parcel) %></td>
-        <td><%= link_to 'Destroy', parcel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l parcel.created_at, format: :long %></td>
+        <td>
+          <%= link_to parcel_path(parcel), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to parcel_path(parcel), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Parcel', new_parcel_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_parcel_path,
+            :class => 'btn btn-primary' %>

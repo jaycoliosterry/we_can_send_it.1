@@ -1,6 +1,5 @@
-<h1>Editing parcel</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @parcel %> |
-<%= link_to 'Back', parcels_path %>
+<%- model_class = Parcel -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Parcel %></h1>
+</div>
+<%= render :partial => 'form' %>
