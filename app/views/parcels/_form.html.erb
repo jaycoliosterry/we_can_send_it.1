@@ -1,0 +1,26 @@
+<%= simple_form_for(@parcel) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :order %>
+    <%= f.input :customer_shipment_cost_pre_tax %>
+    <%= f.input :taxable %>
+    <%= f.input :tax_rate %>
+    <%= f.input :tax %>
+    <%= f.input :customer_shipment_cost_with_tax %>
+    <%= f.input :parcel_items_and_quantity %>
+    <%= f.input :weight_of_parcel %>
+    <%= f.input :customs_short_declaration %>
+    <%= f.input :customs_long_description %>
+    <%= f.input :parcel_height %>
+    <%= f.input :parcel_length %>
+    <%= f.input :parcel_width %>
+    <%= f.input :parcel_number_in_order %>
+    <%= f.input :internal_cost_of_parcel %>
+    <%= f.input :shipping_carrier %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

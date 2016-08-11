@@ -1,0 +1,55 @@
+<h1>Listing parcels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Order</th>
+      <th>Customer shipment cost pre tax</th>
+      <th>Taxable</th>
+      <th>Tax rate</th>
+      <th>Tax</th>
+      <th>Customer shipment cost with tax</th>
+      <th>Parcel items and quantity</th>
+      <th>Weight of parcel</th>
+      <th>Customs short declaration</th>
+      <th>Customs long description</th>
+      <th>Parcel height</th>
+      <th>Parcel length</th>
+      <th>Parcel width</th>
+      <th>Parcel number in order</th>
+      <th>Internal cost of parcel</th>
+      <th>Shipping carrier</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parcels.each do |parcel| %>
+      <tr>
+        <td><%= parcel.order %></td>
+        <td><%= parcel.customer_shipment_cost_pre_tax %></td>
+        <td><%= parcel.taxable %></td>
+        <td><%= parcel.tax_rate %></td>
+        <td><%= parcel.tax %></td>
+        <td><%= parcel.customer_shipment_cost_with_tax %></td>
+        <td><%= parcel.parcel_items_and_quantity %></td>
+        <td><%= parcel.weight_of_parcel %></td>
+        <td><%= parcel.customs_short_declaration %></td>
+        <td><%= parcel.customs_long_description %></td>
+        <td><%= parcel.parcel_height %></td>
+        <td><%= parcel.parcel_length %></td>
+        <td><%= parcel.parcel_width %></td>
+        <td><%= parcel.parcel_number_in_order %></td>
+        <td><%= parcel.internal_cost_of_parcel %></td>
+        <td><%= parcel.shipping_carrier %></td>
+        <td><%= link_to 'Show', parcel %></td>
+        <td><%= link_to 'Edit', edit_parcel_path(parcel) %></td>
+        <td><%= link_to 'Destroy', parcel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Parcel', new_parcel_path %>

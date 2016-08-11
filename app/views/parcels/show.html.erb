@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @parcel.order %>
+</p>
+
+<p>
+  <strong>Customer shipment cost pre tax:</strong>
+  <%= @parcel.customer_shipment_cost_pre_tax %>
+</p>
+
+<p>
+  <strong>Taxable:</strong>
+  <%= @parcel.taxable %>
+</p>
+
+<p>
+  <strong>Tax rate:</strong>
+  <%= @parcel.tax_rate %>
+</p>
+
+<p>
+  <strong>Tax:</strong>
+  <%= @parcel.tax %>
+</p>
+
+<p>
+  <strong>Customer shipment cost with tax:</strong>
+  <%= @parcel.customer_shipment_cost_with_tax %>
+</p>
+
+<p>
+  <strong>Parcel items and quantity:</strong>
+  <%= @parcel.parcel_items_and_quantity %>
+</p>
+
+<p>
+  <strong>Weight of parcel:</strong>
+  <%= @parcel.weight_of_parcel %>
+</p>
+
+<p>
+  <strong>Customs short declaration:</strong>
+  <%= @parcel.customs_short_declaration %>
+</p>
+
+<p>
+  <strong>Customs long description:</strong>
+  <%= @parcel.customs_long_description %>
+</p>
+
+<p>
+  <strong>Parcel height:</strong>
+  <%= @parcel.parcel_height %>
+</p>
+
+<p>
+  <strong>Parcel length:</strong>
+  <%= @parcel.parcel_length %>
+</p>
+
+<p>
+  <strong>Parcel width:</strong>
+  <%= @parcel.parcel_width %>
+</p>
+
+<p>
+  <strong>Parcel number in order:</strong>
+  <%= @parcel.parcel_number_in_order %>
+</p>
+
+<p>
+  <strong>Internal cost of parcel:</strong>
+  <%= @parcel.internal_cost_of_parcel %>
+</p>
+
+<p>
+  <strong>Shipping carrier:</strong>
+  <%= @parcel.shipping_carrier %>
+</p>
+
+<%= link_to 'Edit', edit_parcel_path(@parcel) %> |
+<%= link_to 'Back', parcels_path %>

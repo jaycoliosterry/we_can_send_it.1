@@ -1,0 +1,2 @@
+json.extract! parcel, :id, :order_id, :customer_shipment_cost_pre_tax, :taxable, :tax_rate, :tax, :customer_shipment_cost_with_tax, :parcel_items_and_quantity, :weight_of_parcel, :customs_short_declaration, :customs_long_description, :parcel_height, :parcel_length, :parcel_width, :parcel_number_in_order, :internal_cost_of_parcel, :shipping_carrier, :created_at, :updated_at
+json.url parcel_url(parcel, format: :json)
