@@ -1,0 +1,41 @@
+<h1>Listing invoices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Invoice number</th>
+      <th>Issue date</th>
+      <th>Due date</th>
+      <th>Paid</th>
+      <th>Sales tax applicable</th>
+      <th>Emailed to client</th>
+      <th>Purchase order number</th>
+      <th>Invoice line item</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @invoices.each do |invoice| %>
+      <tr>
+        <td><%= invoice.company %></td>
+        <td><%= invoice.invoice_number %></td>
+        <td><%= invoice.issue_date %></td>
+        <td><%= invoice.due_date %></td>
+        <td><%= invoice.paid %></td>
+        <td><%= invoice.sales_tax_applicable %></td>
+        <td><%= invoice.emailed_to_client %></td>
+        <td><%= invoice.purchase_order_number %></td>
+        <td><%= invoice.invoice_line_item %></td>
+        <td><%= link_to 'Show', invoice %></td>
+        <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
+        <td><%= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Invoice', new_invoice_path %>

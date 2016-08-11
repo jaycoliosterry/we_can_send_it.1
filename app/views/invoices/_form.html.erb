@@ -1,0 +1,19 @@
+<%= simple_form_for(@invoice) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :company %>
+    <%= f.input :invoice_number %>
+    <%= f.input :issue_date %>
+    <%= f.input :due_date %>
+    <%= f.input :paid %>
+    <%= f.input :sales_tax_applicable %>
+    <%= f.input :emailed_to_client %>
+    <%= f.input :purchase_order_number %>
+    <%= f.association :invoice_line_item %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
