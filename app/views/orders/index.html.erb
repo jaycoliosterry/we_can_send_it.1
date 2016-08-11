@@ -1,0 +1,49 @@
+<h1>Listing orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Invoice line item</th>
+      <th>Delivery status</th>
+      <th>Customer comments</th>
+      <th>Customer uploaded file</th>
+      <th>Send confirmation emails to recipients</th>
+      <th>Order number</th>
+      <th>User</th>
+      <th>Total order weight</th>
+      <th>Wcsi total order cost</th>
+      <th>Customer total order cost pre tax</th>
+      <th>Any taxable shipments</th>
+      <th>Total tax on order</th>
+      <th>Customer total order cost with tax</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.invoice_line_item %></td>
+        <td><%= order.delivery_status %></td>
+        <td><%= order.customer_comments %></td>
+        <td><%= order.customer_uploaded_file %></td>
+        <td><%= order.send_confirmation_emails_to_recipients %></td>
+        <td><%= order.order_number %></td>
+        <td><%= order.user %></td>
+        <td><%= order.total_order_weight %></td>
+        <td><%= order.wcsi_total_order_cost %></td>
+        <td><%= order.customer_total_order_cost_pre_tax %></td>
+        <td><%= order.any_taxable_shipments %></td>
+        <td><%= order.total_tax_on_order %></td>
+        <td><%= order.customer_total_order_cost_with_tax %></td>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order', new_order_path %>

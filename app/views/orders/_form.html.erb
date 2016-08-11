@@ -1,0 +1,23 @@
+<%= simple_form_for(@order) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :invoice_line_item %>
+    <%= f.input :delivery_status %>
+    <%= f.input :customer_comments %>
+    <%= f.input :customer_uploaded_file %>
+    <%= f.input :send_confirmation_emails_to_recipients %>
+    <%= f.input :order_number %>
+    <%= f.association :user %>
+    <%= f.input :total_order_weight %>
+    <%= f.input :wcsi_total_order_cost %>
+    <%= f.input :customer_total_order_cost_pre_tax %>
+    <%= f.input :any_taxable_shipments %>
+    <%= f.input :total_tax_on_order %>
+    <%= f.input :customer_total_order_cost_with_tax %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

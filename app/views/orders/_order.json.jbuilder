@@ -1,0 +1,2 @@
+json.extract! order, :id, :invoice_line_item_id, :delivery_status, :customer_comments, :customer_uploaded_file, :send_confirmation_emails_to_recipients, :order_number, :user_id, :total_order_weight, :wcsi_total_order_cost, :customer_total_order_cost_pre_tax, :any_taxable_shipments, :total_tax_on_order, :customer_total_order_cost_with_tax, :created_at, :updated_at
+json.url order_url(order, format: :json)
