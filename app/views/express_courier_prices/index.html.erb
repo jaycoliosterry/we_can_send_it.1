@@ -1,10 +1,11 @@
 <%= flash[:notice] %>
+<h2>Express Courier Prices</h2>
 <table>
   <thead>
     <tr>
-      <th>Id</th>
-      <th>Weight</th>
+      <th>weight</th>
       <th>Zone 1</th>
+      <th>Zone 2</th>
       <th>Zone 3</th>
       <th>Zone 4</th>
       <th>Zone 5</th>
@@ -18,26 +19,29 @@
   <tbody>
     <% @express_courier_prices.each do |express_courier_price| %>
       <tr>
-        <td><%= express_courier_price.id %></td>
-        <td><%= express_courier_price.weight %></td>
-        <td><%= express_courier_price.zone1 %></td>
-        <td><%= express_courier_price.zone2 %></td>
-        <td><%= express_courier_price.zone3 %></td>
-        <td><%= express_courier_price.zone4 %></td>
-        <td><%= express_courier_price.zone5 %></td>
-        <td><%= express_courier_price.zone6 %></td>
-        <td><%= express_courier_price.zone7 %></td>
-        <td><%= express_courier_price.zone8 %></td>
-        <td><%= express_courier_price.zone9 %></td>
-        <td><%= express_courier_price.zone10 %></td>
+        <td><%= express_courier_price.weight %>kg</td>
+        <td><%= express_courier_price.zone1 %>€</td>
+        <td><%= express_courier_price.zone2 %>€</td>
+        <td><%= express_courier_price.zone3 %>€</td>
+        <td><%= express_courier_price.zone4 %>€</td>
+        <td><%= express_courier_price.zone5 %>€</td>
+        <td><%= express_courier_price.zone6 %>€</td>
+        <td><%= express_courier_price.zone7 %>€</td>
+        <td><%= express_courier_price.zone8 %>€</td>
+        <td><%= express_courier_price.zone9 %>€</td>
+        <td><%= express_courier_price.zone10 %>€</td>
       </tr>
     <% end %>
   </tbody>
 </table>
 <div>
+<br />
+<div class="jumbotron">
 <h3>Import a CSV File</h3>
+<br />
   <%= form_tag import_express_courier_prices_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Import CSV" %>
+    <%= file_field_tag :file %> &nbsp
+    <%= submit_tag "Import CSV", class: "btn btn-primary" %>
+    </div>
   <% end %>
 </div>
