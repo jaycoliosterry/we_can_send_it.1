@@ -1,4 +1,5 @@
 ActiveAdmin.register EmailTemplate do
+  permit_params :available_to_entire_company, :reply_to_email_address, :email_subject, :email_body, :css
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
