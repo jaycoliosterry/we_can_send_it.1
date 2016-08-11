@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160811143140) do
+ActiveRecord::Schema.define(version: 20160811170124) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -154,6 +154,17 @@ ActiveRecord::Schema.define(version: 20160811143140) do
   create_table "express_courier_prices", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "weight"
+    t.decimal  "zone1"
+    t.decimal  "zone2"
+    t.decimal  "zone3"
+    t.decimal  "zone4"
+    t.decimal  "zone5"
+    t.decimal  "zone6"
+    t.decimal  "zone7"
+    t.decimal  "zone8"
+    t.decimal  "zone9"
+    t.decimal  "zone10"
   end
 
   create_table "invoice_line_items", force: true do |t|

@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  get 'prices/index'
+  get 'express_courier_prices/index'
 
-  get 'prices/import'
+  get 'express_courier_prices/import'
 
   get 'landings/index'
 
-  resources :prices do
+  resources :express_courier_prices do
     collection { post :import }
   end
   resources :email_templates

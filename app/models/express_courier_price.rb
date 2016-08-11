@@ -4,14 +4,14 @@ require 'csv'
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
 
-      price_hash = row.to_hash # exclude the price field
-      prices = Price.where(id: price_hash["id"])
+      express_courier_price_controller_hash = row.to_hash # exclude the price field
+      express_courier_prices = ExpressCourierPrice.where(id: express_courier_price_controller_hash["id"])
 
-      if prices.count == 1
-        prices.first.update_attributes(price_hash)
+      if express_courier_prices.count == 1
+        express_courier_prices.first.update_attributes(express_courier_price_controller_hash)
       else
-        Price.create!(price_hash)
-      end # end if !prices.nil?
+        ExpressCourierPrice.create!(express_courier_price_controller_hash)
+      end # end if !express_courier_prices.nil?
     end # end CSV.foreach
   end # end self.import(file)
 end # end class
