@@ -1,0 +1,114 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Wcsi admin:</strong>
+  <%= @company.wcsi_admin %>
+</p>
+
+<p>
+  <strong>Company name:</strong>
+  <%= @company.company_name %>
+</p>
+
+<p>
+  <strong>User admin:</strong>
+  <%= @company.user_admin_id %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @company.department %>
+</p>
+
+<p>
+  <strong>Shipping address line 1:</strong>
+  <%= @company.shipping_address_line_1 %>
+</p>
+
+<p>
+  <strong>Shipping address line 2:</strong>
+  <%= @company.shipping_address_line_2 %>
+</p>
+
+<p>
+  <strong>Shipping postcode or zip:</strong>
+  <%= @company.shipping_postcode_or_zip %>
+</p>
+
+<p>
+  <strong>Shipping city:</strong>
+  <%= @company.shipping_city %>
+</p>
+
+<p>
+  <strong>Shipping state or region:</strong>
+  <%= @company.shipping_state_or_region %>
+</p>
+
+<p>
+  <strong>Shipping country:</strong>
+  <%= @company.shipping_country_id %>
+</p>
+
+<p>
+  <strong>Billing address line 1:</strong>
+  <%= @company.billing_address_line_1 %>
+</p>
+
+<p>
+  <strong>Billing address line 2:</strong>
+  <%= @company.billing_address_line_2 %>
+</p>
+
+<p>
+  <strong>Billing city:</strong>
+  <%= @company.billing_city %>
+</p>
+
+<p>
+  <strong>Billing state or region:</strong>
+  <%= @company.billing_state_or_region %>
+</p>
+
+<p>
+  <strong>Billing country:</strong>
+  <%= @company.billing_country_id %>
+</p>
+
+<p>
+  <strong>Express courier rate:</strong>
+  <%= @company.express_courier_rate_id %>
+</p>
+
+<p>
+  <strong>Economy courier rate:</strong>
+  <%= @company.economy_courier_rate_id %>
+</p>
+
+<p>
+  <strong>Postal courier rate:</strong>
+  <%= @company.postal_courier_rate_id %>
+</p>
+
+<p>
+  <strong>Billing email address:</strong>
+  <%= @company.billing_email_address %>
+</p>
+
+<p>
+  <strong>Main telephone number:</strong>
+  <%= @company.main_telephone_number %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @company.user %>
+</p>
+
+<p>
+  <strong>Invoice line item:</strong>
+  <%= @company.invoice_line_item %>
+</p>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>
