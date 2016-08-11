@@ -3,4 +3,5 @@ class Parcel < ActiveRecord::Base
   has_one :tracking
   has_one :address
   has_one :recipient
+  has_many :stocks
 end
