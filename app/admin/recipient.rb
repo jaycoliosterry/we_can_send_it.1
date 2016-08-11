@@ -1,4 +1,5 @@
 ActiveAdmin.register Recipient do
+  permit_params :address_id, :recipient_name, :recipient_job_title, :recipient_email_address, :recipient_phone_number
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
