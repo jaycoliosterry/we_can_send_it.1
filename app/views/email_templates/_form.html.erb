@@ -1,16 +1,40 @@
-<%= simple_form_for(@email_template) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :user %>
-    <%= f.input :available_to_entire_company %>
-    <%= f.input :reply_to_email_address %>
-    <%= f.input :email_subject %>
-    <%= f.input :email_body %>
-    <%= f.input :css %>
+<%= form_for @email_template, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :available_to_entire_company, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :available_to_entire_company, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :reply_to_email_address, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.email_field :reply_to_email_address, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :email_subject, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :email_subject, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :email_body, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :email_body, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :css, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :css, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  email_templates_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

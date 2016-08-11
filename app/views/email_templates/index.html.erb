@@ -1,35 +1,44 @@
-<h1>Listing email_templates</h1>
-
-<table>
+<%- model_class = EmailTemplate -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => EmailTemplate %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>User</th>
-      <th>Available to entire company</th>
-      <th>Reply to email address</th>
-      <th>Email subject</th>
-      <th>Email body</th>
-      <th>Css</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:available_to_entire_company) %></th>
+      <th><%= model_class.human_attribute_name(:reply_to_email_address) %></th>
+      <th><%= model_class.human_attribute_name(:email_subject) %></th>
+      <th><%= model_class.human_attribute_name(:email_body) %></th>
+      <th><%= model_class.human_attribute_name(:css) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @email_templates.each do |email_template| %>
       <tr>
-        <td><%= email_template.user %></td>
+        <td><%= email_template.id %></td>
         <td><%= email_template.available_to_entire_company %></td>
         <td><%= email_template.reply_to_email_address %></td>
         <td><%= email_template.email_subject %></td>
         <td><%= email_template.email_body %></td>
         <td><%= email_template.css %></td>
-        <td><%= link_to 'Show', email_template %></td>
-        <td><%= link_to 'Edit', edit_email_template_path(email_template) %></td>
-        <td><%= link_to 'Destroy', email_template, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l email_template.created_at, format: :long %></td>
+        <td>
+          <%= link_to email_template_path(email_template), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to email_template_path(email_template), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Email template', new_email_template_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_email_template_path,
+            :class => 'btn btn-primary' %>
