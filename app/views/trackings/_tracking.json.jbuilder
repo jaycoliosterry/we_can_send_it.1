@@ -1,0 +1,2 @@
+json.extract! tracking, :id, :parcel_id, :signed_for_by, :tracking_code, :tracking_status, :tracking_status_description, :required_to_arrive_before, :will_arrive_in_time, :created_at, :updated_at
+json.url tracking_url(tracking, format: :json)

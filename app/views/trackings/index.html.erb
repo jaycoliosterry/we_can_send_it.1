@@ -1,0 +1,37 @@
+<h1>Listing trackings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parcel</th>
+      <th>Signed for by</th>
+      <th>Tracking code</th>
+      <th>Tracking status</th>
+      <th>Tracking status description</th>
+      <th>Required to arrive before</th>
+      <th>Will arrive in time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trackings.each do |tracking| %>
+      <tr>
+        <td><%= tracking.parcel %></td>
+        <td><%= tracking.signed_for_by %></td>
+        <td><%= tracking.tracking_code %></td>
+        <td><%= tracking.tracking_status %></td>
+        <td><%= tracking.tracking_status_description %></td>
+        <td><%= tracking.required_to_arrive_before %></td>
+        <td><%= tracking.will_arrive_in_time %></td>
+        <td><%= link_to 'Show', tracking %></td>
+        <td><%= link_to 'Edit', edit_tracking_path(tracking) %></td>
+        <td><%= link_to 'Destroy', tracking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tracking', new_tracking_path %>

@@ -1,0 +1,17 @@
+<%= simple_form_for(@tracking) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :parcel %>
+    <%= f.input :signed_for_by %>
+    <%= f.input :tracking_code %>
+    <%= f.input :tracking_status %>
+    <%= f.input :tracking_status_description %>
+    <%= f.input :required_to_arrive_before %>
+    <%= f.input :will_arrive_in_time %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

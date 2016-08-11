@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Parcel:</strong>
+  <%= @tracking.parcel %>
+</p>
+
+<p>
+  <strong>Signed for by:</strong>
+  <%= @tracking.signed_for_by %>
+</p>
+
+<p>
+  <strong>Tracking code:</strong>
+  <%= @tracking.tracking_code %>
+</p>
+
+<p>
+  <strong>Tracking status:</strong>
+  <%= @tracking.tracking_status %>
+</p>
+
+<p>
+  <strong>Tracking status description:</strong>
+  <%= @tracking.tracking_status_description %>
+</p>
+
+<p>
+  <strong>Required to arrive before:</strong>
+  <%= @tracking.required_to_arrive_before %>
+</p>
+
+<p>
+  <strong>Will arrive in time:</strong>
+  <%= @tracking.will_arrive_in_time %>
+</p>
+
+<%= link_to 'Edit', edit_tracking_path(@tracking) %> |
+<%= link_to 'Back', trackings_path %>
