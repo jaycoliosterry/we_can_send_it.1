@@ -1,0 +1,1 @@
+json.partial! "addressbooks/addressbook", addressbook: @addressbook

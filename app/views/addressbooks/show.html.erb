@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @addressbook.customer_id %>
+</p>
+
+<p>
+  <strong>Visible to entire company:</strong>
+  <%= @addressbook.visible_to_entire_company %>
+</p>
+
+<p>
+  <strong>Created by user:</strong>
+  <%= @addressbook.created_by_user_id %>
+</p>
+
+<p>
+  <strong>Address book name:</strong>
+  <%= @addressbook.address_book_name %>
+</p>
+
+<p>
+  <strong>Address book description:</strong>
+  <%= @addressbook.address_book_description %>
+</p>
+
+<p>
+  <strong>Archive this address book:</strong>
+  <%= @addressbook.archive_this_address_book %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @addressbook.company %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @addressbook.user %>
+</p>
+
+<%= link_to 'Edit', edit_addressbook_path(@addressbook) %> |
+<%= link_to 'Back', addressbooks_path %>

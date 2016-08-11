@@ -1,0 +1,2 @@
+json.extract! addressbook, :id, :customer_id, :visible_to_entire_company, :created_by_user_id, :address_book_name, :address_book_description, :archive_this_address_book, :company_id, :user_id, :created_at, :updated_at
+json.url addressbook_url(addressbook, format: :json)

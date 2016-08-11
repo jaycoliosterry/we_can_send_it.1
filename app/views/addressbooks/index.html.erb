@@ -1,0 +1,39 @@
+<h1>Listing addressbooks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customer</th>
+      <th>Visible to entire company</th>
+      <th>Created by user</th>
+      <th>Address book name</th>
+      <th>Address book description</th>
+      <th>Archive this address book</th>
+      <th>Company</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @addressbooks.each do |addressbook| %>
+      <tr>
+        <td><%= addressbook.customer_id %></td>
+        <td><%= addressbook.visible_to_entire_company %></td>
+        <td><%= addressbook.created_by_user_id %></td>
+        <td><%= addressbook.address_book_name %></td>
+        <td><%= addressbook.address_book_description %></td>
+        <td><%= addressbook.archive_this_address_book %></td>
+        <td><%= addressbook.company %></td>
+        <td><%= addressbook.user %></td>
+        <td><%= link_to 'Show', addressbook %></td>
+        <td><%= link_to 'Edit', edit_addressbook_path(addressbook) %></td>
+        <td><%= link_to 'Destroy', addressbook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Addressbook', new_addressbook_path %>
