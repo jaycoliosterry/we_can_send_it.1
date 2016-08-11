@@ -42,8 +42,6 @@ gem 'bundler'
 
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
-gem 'paperclip'
-gem 'easypost'
 gem 'bootstrap-sass', '3.3.5'
 gem 'bootstrap-sass-extras'
 gem 'delayed_job_active_record'
@@ -53,6 +51,7 @@ gem 'devise', github: 'plataformatec/devise'
 gem 'simple_form'
 gem 'rails_config'
 gem 'omniauth'
+gem 'paperclip'
 gem 'omniauth-facebook'
 
 group :development do
