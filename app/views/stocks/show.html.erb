@@ -1,89 +1,52 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Stock -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Stock %></h1>
+</div>
 
-<p>
-  <strong>Company:</strong>
-  <%= @stock.company %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:mark_stock_as_to_be_destroyed) %></dt>
+      <dd><pre class="prettyprint"><%= @stock.mark_stock_as_to_be_destroyed %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:title) %></dt>
+      <dd><pre class="prettyprint"><%= @stock.title %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:description) %></dt>
+      <dd><pre class="prettyprint"><%= @stock.description %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:client_reference_code) %></dt>
+      <dd><pre class="prettyprint"><%= @stock.client_reference_code %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:height_in_cm) %></dt>
+      <dd><pre class="prettyprint"><%= @stock.height_in_cm %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:width_in_cm) %></dt>
+      <dd><pre class="prettyprint"><%= @stock.width_in_cm %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:length_in_cm) %></dt>
+      <dd><pre class="prettyprint"><%= @stock.length_in_cm %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:paper_size) %></dt>
+      <dd><pre class="prettyprint"><%= @stock.paper_size %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:number_of_pages) %></dt>
+      <dd><pre class="prettyprint"><%= @stock.number_of_pages %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:weight_in_kg) %></dt>
+      <dd><pre class="prettyprint"><%= @stock.weight_in_kg %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:stock_image) %></dt>
+      <dd><pre class="prettyprint"><%= @stock.stock_image %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:quantity_currently_in_stock) %></dt>
+      <dd><pre class="prettyprint"><%= @stock.quantity_currently_in_stock %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:total_ever_in_stock) %></dt>
+      <dd><pre class="prettyprint"><%= @stock.total_ever_in_stock %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:total_ever_sent) %></dt>
+      <dd><pre class="prettyprint"><%= @stock.total_ever_sent %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:total_damaged_or_destroyed) %></dt>
+      <dd><pre class="prettyprint"><%= @stock.total_damaged_or_destroyed %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Mark stock as to be destroyed:</strong>
-  <%= @stock.mark_stock_as_to_be_destroyed %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              stocks_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_stock_path(@stock), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              stock_path(@stock),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @stock.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @stock.description %>
-</p>
-
-<p>
-  <strong>Client reference code:</strong>
-  <%= @stock.client_reference_code %>
-</p>
-
-<p>
-  <strong>Height in cm:</strong>
-  <%= @stock.height_in_cm %>
-</p>
-
-<p>
-  <strong>Width in cm:</strong>
-  <%= @stock.width_in_cm %>
-</p>
-
-<p>
-  <strong>Length in cm:</strong>
-  <%= @stock.length_in_cm %>
-</p>
-
-<p>
-  <strong>Paper size:</strong>
-  <%= @stock.paper_size %>
-</p>
-
-<p>
-  <strong>Number of pages:</strong>
-  <%= @stock.number_of_pages %>
-</p>
-
-<p>
-  <strong>Weight in kg:</strong>
-  <%= @stock.weight_in_kg %>
-</p>
-
-<p>
-  <strong>Stock image:</strong>
-  <%= @stock.stock_image %>
-</p>
-
-<p>
-  <strong>Quantity currently in stock:</strong>
-  <%= @stock.quantity_currently_in_stock %>
-</p>
-
-<p>
-  <strong>Total ever in stock:</strong>
-  <%= @stock.total_ever_in_stock %>
-</p>
-
-<p>
-  <strong>Total ever sent:</strong>
-  <%= @stock.total_ever_sent %>
-</p>
-
-<p>
-  <strong>Total damaged or destroyed:</strong>
-  <%= @stock.total_damaged_or_destroyed %>
-</p>
-
-<p>
-  <strong>Parcel:</strong>
-  <%= @stock.parcel %>
-</p>
-
-<%= link_to 'Edit', edit_stock_path(@stock) %> |
-<%= link_to 'Back', stocks_path %>

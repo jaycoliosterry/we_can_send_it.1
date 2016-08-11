@@ -1,27 +1,100 @@
-<%= simple_form_for(@stock) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.association :company %>
-    <%= f.input :mark_stock_as_to_be_destroyed %>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :client_reference_code %>
-    <%= f.input :height_in_cm %>
-    <%= f.input :width_in_cm %>
-    <%= f.input :length_in_cm %>
-    <%= f.input :paper_size %>
-    <%= f.input :number_of_pages %>
-    <%= f.input :weight_in_kg %>
-    <%= f.input :stock_image %>
-    <%= f.input :quantity_currently_in_stock %>
-    <%= f.input :total_ever_in_stock %>
-    <%= f.input :total_ever_sent %>
-    <%= f.input :total_damaged_or_destroyed %>
-    <%= f.association :parcel %>
+<%= form_for @stock, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :mark_stock_as_to_be_destroyed, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :mark_stock_as_to_be_destroyed, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :title, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :title, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :description, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :client_reference_code, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :client_reference_code, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :height_in_cm, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :height_in_cm, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :width_in_cm, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :width_in_cm, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :length_in_cm, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :length_in_cm, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :paper_size, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :paper_size, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :number_of_pages, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :number_of_pages, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :weight_in_kg, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :weight_in_kg, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :stock_image, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :stock_image, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :quantity_currently_in_stock, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :quantity_currently_in_stock, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :total_ever_in_stock, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :total_ever_in_stock, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :total_ever_sent, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :total_ever_sent, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :total_damaged_or_destroyed, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :total_damaged_or_destroyed, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  stocks_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>
