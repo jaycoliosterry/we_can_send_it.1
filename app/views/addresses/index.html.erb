@@ -1,0 +1,55 @@
+<h1>Listing addresses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Receiver company</th>
+      <th>Receiver company name</th>
+      <th>Receiver company contact name</th>
+      <th>Address book</th>
+      <th>Addressbook</th>
+      <th>Address line 1</th>
+      <th>Address line 2</th>
+      <th>Zip or postcode</th>
+      <th>City</th>
+      <th>State or region</th>
+      <th>Country</th>
+      <th>Brazilian federal tax</th>
+      <th>Brazilian state tax</th>
+      <th>Chinese cr code</th>
+      <th>User</th>
+      <th>Parcel</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @addresses.each do |address| %>
+      <tr>
+        <td><%= address.receiver_company_id %></td>
+        <td><%= address.receiver_company_name %></td>
+        <td><%= address.receiver_company_contact_name %></td>
+        <td><%= address.address_book_id %></td>
+        <td><%= address.addressbook %></td>
+        <td><%= address.address_line_1 %></td>
+        <td><%= address.address_line_2 %></td>
+        <td><%= address.zip_or_postcode %></td>
+        <td><%= address.city %></td>
+        <td><%= address.state_or_region %></td>
+        <td><%= address.country_id %></td>
+        <td><%= address.brazilian_federal_tax_id %></td>
+        <td><%= address.brazilian_state_tax_id %></td>
+        <td><%= address.chinese_cr_code %></td>
+        <td><%= address.user %></td>
+        <td><%= address.parcel %></td>
+        <td><%= link_to 'Show', address %></td>
+        <td><%= link_to 'Edit', edit_address_path(address) %></td>
+        <td><%= link_to 'Destroy', address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Address', new_address_path %>

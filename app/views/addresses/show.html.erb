@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Receiver company:</strong>
+  <%= @address.receiver_company_id %>
+</p>
+
+<p>
+  <strong>Receiver company name:</strong>
+  <%= @address.receiver_company_name %>
+</p>
+
+<p>
+  <strong>Receiver company contact name:</strong>
+  <%= @address.receiver_company_contact_name %>
+</p>
+
+<p>
+  <strong>Address book:</strong>
+  <%= @address.address_book_id %>
+</p>
+
+<p>
+  <strong>Addressbook:</strong>
+  <%= @address.addressbook %>
+</p>
+
+<p>
+  <strong>Address line 1:</strong>
+  <%= @address.address_line_1 %>
+</p>
+
+<p>
+  <strong>Address line 2:</strong>
+  <%= @address.address_line_2 %>
+</p>
+
+<p>
+  <strong>Zip or postcode:</strong>
+  <%= @address.zip_or_postcode %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @address.city %>
+</p>
+
+<p>
+  <strong>State or region:</strong>
+  <%= @address.state_or_region %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @address.country_id %>
+</p>
+
+<p>
+  <strong>Brazilian federal tax:</strong>
+  <%= @address.brazilian_federal_tax_id %>
+</p>
+
+<p>
+  <strong>Brazilian state tax:</strong>
+  <%= @address.brazilian_state_tax_id %>
+</p>
+
+<p>
+  <strong>Chinese cr code:</strong>
+  <%= @address.chinese_cr_code %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @address.user %>
+</p>
+
+<p>
+  <strong>Parcel:</strong>
+  <%= @address.parcel %>
+</p>
+
+<%= link_to 'Edit', edit_address_path(@address) %> |
+<%= link_to 'Back', addresses_path %>

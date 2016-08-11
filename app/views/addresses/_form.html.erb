@@ -1,0 +1,26 @@
+<%= simple_form_for(@address) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :receiver_company_id %>
+    <%= f.input :receiver_company_name %>
+    <%= f.input :receiver_company_contact_name %>
+    <%= f.input :address_book_id %>
+    <%= f.association :addressbook %>
+    <%= f.input :address_line_1 %>
+    <%= f.input :address_line_2 %>
+    <%= f.input :zip_or_postcode %>
+    <%= f.input :city %>
+    <%= f.input :state_or_region %>
+    <%= f.input :country_id %>
+    <%= f.input :brazilian_federal_tax_id %>
+    <%= f.input :brazilian_state_tax_id %>
+    <%= f.input :chinese_cr_code %>
+    <%= f.association :user %>
+    <%= f.association :parcel %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

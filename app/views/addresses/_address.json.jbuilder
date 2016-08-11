@@ -1,0 +1,2 @@
+json.extract! address, :id, :receiver_company_id, :receiver_company_name, :receiver_company_contact_name, :address_book_id, :addressbook_id, :address_line_1, :address_line_2, :zip_or_postcode, :city, :state_or_region, :country_id, :brazilian_federal_tax_id, :brazilian_state_tax_id, :chinese_cr_code, :user_id, :parcel_id, :created_at, :updated_at
+json.url address_url(address, format: :json)
