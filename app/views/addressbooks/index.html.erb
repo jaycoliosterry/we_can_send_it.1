@@ -1,39 +1,46 @@
-<h1>Listing addressbooks</h1>
-
-<table>
+<%- model_class = Addressbook -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Addressbook %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Customer</th>
-      <th>Visible to entire company</th>
-      <th>Created by user</th>
-      <th>Address book name</th>
-      <th>Address book description</th>
-      <th>Archive this address book</th>
-      <th>Company</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:customer_id) %></th>
+      <th><%= model_class.human_attribute_name(:visible_to_entire_company) %></th>
+      <th><%= model_class.human_attribute_name(:created_by_user_id) %></th>
+      <th><%= model_class.human_attribute_name(:address_book_name) %></th>
+      <th><%= model_class.human_attribute_name(:address_book_description) %></th>
+      <th><%= model_class.human_attribute_name(:archive_this_address_book) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @addressbooks.each do |addressbook| %>
       <tr>
+        <td><%= addressbook.id %></td>
         <td><%= addressbook.customer_id %></td>
         <td><%= addressbook.visible_to_entire_company %></td>
         <td><%= addressbook.created_by_user_id %></td>
         <td><%= addressbook.address_book_name %></td>
         <td><%= addressbook.address_book_description %></td>
         <td><%= addressbook.archive_this_address_book %></td>
-        <td><%= addressbook.company %></td>
-        <td><%= addressbook.user %></td>
-        <td><%= link_to 'Show', addressbook %></td>
-        <td><%= link_to 'Edit', edit_addressbook_path(addressbook) %></td>
-        <td><%= link_to 'Destroy', addressbook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l addressbook.created_at, format: :long %></td>
+        <td>
+          <%= link_to addressbook_path(addressbook), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to addressbook_path(addressbook), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Addressbook', new_addressbook_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_addressbook_path,
+            :class => 'btn btn-primary' %>

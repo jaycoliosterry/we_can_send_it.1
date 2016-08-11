@@ -1,44 +1,34 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Addressbook -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Addressbook %></h1>
+</div>
 
-<p>
-  <strong>Customer:</strong>
-  <%= @addressbook.customer_id %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:customer_id) %></dt>
+      <dd><pre class="prettyprint"><%= @addressbook.customer_id %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:visible_to_entire_company) %></dt>
+      <dd><pre class="prettyprint"><%= @addressbook.visible_to_entire_company %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:created_by_user_id) %></dt>
+      <dd><pre class="prettyprint"><%= @addressbook.created_by_user_id %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:address_book_name) %></dt>
+      <dd><pre class="prettyprint"><%= @addressbook.address_book_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:address_book_description) %></dt>
+      <dd><pre class="prettyprint"><%= @addressbook.address_book_description %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:archive_this_address_book) %></dt>
+      <dd><pre class="prettyprint"><%= @addressbook.archive_this_address_book %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Visible to entire company:</strong>
-  <%= @addressbook.visible_to_entire_company %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              addressbooks_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_addressbook_path(@addressbook), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              addressbook_path(@addressbook),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Created by user:</strong>
-  <%= @addressbook.created_by_user_id %>
-</p>
-
-<p>
-  <strong>Address book name:</strong>
-  <%= @addressbook.address_book_name %>
-</p>
-
-<p>
-  <strong>Address book description:</strong>
-  <%= @addressbook.address_book_description %>
-</p>
-
-<p>
-  <strong>Archive this address book:</strong>
-  <%= @addressbook.archive_this_address_book %>
-</p>
-
-<p>
-  <strong>Company:</strong>
-  <%= @addressbook.company %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @addressbook.user %>
-</p>
-
-<%= link_to 'Edit', edit_addressbook_path(@addressbook) %> |
-<%= link_to 'Back', addressbooks_path %>

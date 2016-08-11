@@ -1,6 +1,5 @@
-<h1>Editing addressbook</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @addressbook %> |
-<%= link_to 'Back', addressbooks_path %>
+<%- model_class = Addressbook -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => Addressbook %></h1>
+</div>
+<%= render :partial => 'form' %>
