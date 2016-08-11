@@ -39,7 +39,7 @@
         <td><%= stock.paper_size %></td>
         <td><%= stock.number_of_pages %></td>
         <td><%= stock.weight_in_kg %></td>
-        <td><%= stock.stock_image %></td>
+        <td><%= image_tag stock.image.url(:thumb) %></td>
         <td><%= stock.quantity_currently_in_stock %></td>
         <td><%= stock.total_ever_in_stock %></td>
         <td><%= stock.total_ever_sent %></td>

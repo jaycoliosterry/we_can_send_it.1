@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+  get 'prices/index'
+
+  get 'prices/import'
+
   get 'landings/index'
 
+  resources :prices do
+    collection { post :import }
+  end
   resources :email_templates
 
   resources :orders

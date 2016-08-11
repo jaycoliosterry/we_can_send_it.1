@@ -1,4 +1,4 @@
-<%= form_for @stock, :html => { :class => 'form-horizontal form-model' } do |f| %>
+<%= form_for @stock, :html => { :class => 'form-horizontal form-model', :multipart => true } do |f| %>
   <div class="form-group">
     <%= f.label :mark_stock_as_to_be_destroyed, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
@@ -60,9 +60,9 @@
     </div>
   </div>
   <div class="form-group">
-    <%= f.label :stock_image, :class => 'control-label col-md-2' %>
+    <%= f.label :image, :class => 'control-label col-md-2' %>
     <div class="col-md-10">
-      <%= f.text_field :stock_image, :class => 'text-field form-control' %>
+      <%= f.file_field :image, :class => 'text-field form-control' %>
     </div>
   </div>
   <div class="form-group">

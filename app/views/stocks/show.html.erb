@@ -6,7 +6,7 @@
 <div class="fieldset">
   <dl>
       <dt class="label label-default"><%= model_class.human_attribute_name(:mark_stock_as_to_be_destroyed) %></dt>
-      <dd><pre class="prettyprint"><%= @stock.mark_stock_as_to_be_destroyed %></pre></dd>
+      <dd><pre class="prettyprint"><%= @stock.mark_stock_as_to_be_destroyed ? "Stock will be deleted from system and destroyed" : "Keep on stock" %></pre></dd>
       <dt class="label label-default"><%= model_class.human_attribute_name(:title) %></dt>
       <dd><pre class="prettyprint"><%= @stock.title %></pre></dd>
       <dt class="label label-default"><%= model_class.human_attribute_name(:description) %></dt>
@@ -25,8 +25,8 @@
       <dd><pre class="prettyprint"><%= @stock.number_of_pages %></pre></dd>
       <dt class="label label-default"><%= model_class.human_attribute_name(:weight_in_kg) %></dt>
       <dd><pre class="prettyprint"><%= @stock.weight_in_kg %></pre></dd>
-      <dt class="label label-default"><%= model_class.human_attribute_name(:stock_image) %></dt>
-      <dd><pre class="prettyprint"><%= @stock.stock_image %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:image) %></dt>
+      <dd><pre class="prettyprint"><%= image_tag @stock.image.url(:medium) %></pre></dd>
       <dt class="label label-default"><%= model_class.human_attribute_name(:quantity_currently_in_stock) %></dt>
       <dd><pre class="prettyprint"><%= @stock.quantity_currently_in_stock %></pre></dd>
       <dt class="label label-default"><%= model_class.human_attribute_name(:total_ever_in_stock) %></dt>
