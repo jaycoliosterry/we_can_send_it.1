@@ -42,6 +42,7 @@ gem 'bundler'
 
 gem 'validates_formatting_of'
 gem 'tzinfo-data'
+gem 'easypost'
 gem 'bootstrap-sass', '3.3.5'
 gem 'bootstrap-sass-extras'
 gem 'delayed_job_active_record'
