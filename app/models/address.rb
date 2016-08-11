@@ -3,4 +3,5 @@ class Address < ActiveRecord::Base
   belongs_to :user
   belongs_to :parcel
   has_many :recipients
+  has_many :addressbooks
 end
