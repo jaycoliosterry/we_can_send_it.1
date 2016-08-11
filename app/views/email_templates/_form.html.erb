@@ -1,0 +1,16 @@
+<%= simple_form_for(@email_template) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :user %>
+    <%= f.input :available_to_entire_company %>
+    <%= f.input :reply_to_email_address %>
+    <%= f.input :email_subject %>
+    <%= f.input :email_body %>
+    <%= f.input :css %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

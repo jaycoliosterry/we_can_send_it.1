@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :email_templates
+
   resources :orders
 
   resources :addresses

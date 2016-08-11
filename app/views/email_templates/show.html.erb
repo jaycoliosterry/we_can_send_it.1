@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @email_template.user %>
+</p>
+
+<p>
+  <strong>Available to entire company:</strong>
+  <%= @email_template.available_to_entire_company %>
+</p>
+
+<p>
+  <strong>Reply to email address:</strong>
+  <%= @email_template.reply_to_email_address %>
+</p>
+
+<p>
+  <strong>Email subject:</strong>
+  <%= @email_template.email_subject %>
+</p>
+
+<p>
+  <strong>Email body:</strong>
+  <%= @email_template.email_body %>
+</p>
+
+<p>
+  <strong>Css:</strong>
+  <%= @email_template.css %>
+</p>
+
+<%= link_to 'Edit', edit_email_template_path(@email_template) %> |
+<%= link_to 'Back', email_templates_path %>

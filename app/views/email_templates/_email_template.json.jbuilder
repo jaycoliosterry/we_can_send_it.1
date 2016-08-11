@@ -1,0 +1,2 @@
+json.extract! email_template, :id, :user_id, :available_to_entire_company, :reply_to_email_address, :email_subject, :email_body, :css, :created_at, :updated_at
+json.url email_template_url(email_template, format: :json)

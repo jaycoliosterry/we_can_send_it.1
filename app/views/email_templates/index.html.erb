@@ -1,0 +1,35 @@
+<h1>Listing email_templates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Available to entire company</th>
+      <th>Reply to email address</th>
+      <th>Email subject</th>
+      <th>Email body</th>
+      <th>Css</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @email_templates.each do |email_template| %>
+      <tr>
+        <td><%= email_template.user %></td>
+        <td><%= email_template.available_to_entire_company %></td>
+        <td><%= email_template.reply_to_email_address %></td>
+        <td><%= email_template.email_subject %></td>
+        <td><%= email_template.email_body %></td>
+        <td><%= email_template.css %></td>
+        <td><%= link_to 'Show', email_template %></td>
+        <td><%= link_to 'Edit', edit_email_template_path(email_template) %></td>
+        <td><%= link_to 'Destroy', email_template, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Email template', new_email_template_path %>
