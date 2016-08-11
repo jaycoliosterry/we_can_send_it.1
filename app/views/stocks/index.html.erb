@@ -1,0 +1,57 @@
+<h1>Listing stocks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company</th>
+      <th>Mark stock as to be destroyed</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Client reference code</th>
+      <th>Height in cm</th>
+      <th>Width in cm</th>
+      <th>Length in cm</th>
+      <th>Paper size</th>
+      <th>Number of pages</th>
+      <th>Weight in kg</th>
+      <th>Stock image</th>
+      <th>Quantity currently in stock</th>
+      <th>Total ever in stock</th>
+      <th>Total ever sent</th>
+      <th>Total damaged or destroyed</th>
+      <th>Parcel</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stocks.each do |stock| %>
+      <tr>
+        <td><%= stock.company %></td>
+        <td><%= stock.mark_stock_as_to_be_destroyed %></td>
+        <td><%= stock.title %></td>
+        <td><%= stock.description %></td>
+        <td><%= stock.client_reference_code %></td>
+        <td><%= stock.height_in_cm %></td>
+        <td><%= stock.width_in_cm %></td>
+        <td><%= stock.length_in_cm %></td>
+        <td><%= stock.paper_size %></td>
+        <td><%= stock.number_of_pages %></td>
+        <td><%= stock.weight_in_kg %></td>
+        <td><%= stock.stock_image %></td>
+        <td><%= stock.quantity_currently_in_stock %></td>
+        <td><%= stock.total_ever_in_stock %></td>
+        <td><%= stock.total_ever_sent %></td>
+        <td><%= stock.total_damaged_or_destroyed %></td>
+        <td><%= stock.parcel %></td>
+        <td><%= link_to 'Show', stock %></td>
+        <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
+        <td><%= link_to 'Destroy', stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stock', new_stock_path %>

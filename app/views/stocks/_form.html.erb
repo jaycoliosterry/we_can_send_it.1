@@ -1,0 +1,27 @@
+<%= simple_form_for(@stock) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :company %>
+    <%= f.input :mark_stock_as_to_be_destroyed %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :client_reference_code %>
+    <%= f.input :height_in_cm %>
+    <%= f.input :width_in_cm %>
+    <%= f.input :length_in_cm %>
+    <%= f.input :paper_size %>
+    <%= f.input :number_of_pages %>
+    <%= f.input :weight_in_kg %>
+    <%= f.input :stock_image %>
+    <%= f.input :quantity_currently_in_stock %>
+    <%= f.input :total_ever_in_stock %>
+    <%= f.input :total_ever_sent %>
+    <%= f.input :total_damaged_or_destroyed %>
+    <%= f.association :parcel %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

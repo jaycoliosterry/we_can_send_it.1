@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @stock.company %>
+</p>
+
+<p>
+  <strong>Mark stock as to be destroyed:</strong>
+  <%= @stock.mark_stock_as_to_be_destroyed %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @stock.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @stock.description %>
+</p>
+
+<p>
+  <strong>Client reference code:</strong>
+  <%= @stock.client_reference_code %>
+</p>
+
+<p>
+  <strong>Height in cm:</strong>
+  <%= @stock.height_in_cm %>
+</p>
+
+<p>
+  <strong>Width in cm:</strong>
+  <%= @stock.width_in_cm %>
+</p>
+
+<p>
+  <strong>Length in cm:</strong>
+  <%= @stock.length_in_cm %>
+</p>
+
+<p>
+  <strong>Paper size:</strong>
+  <%= @stock.paper_size %>
+</p>
+
+<p>
+  <strong>Number of pages:</strong>
+  <%= @stock.number_of_pages %>
+</p>
+
+<p>
+  <strong>Weight in kg:</strong>
+  <%= @stock.weight_in_kg %>
+</p>
+
+<p>
+  <strong>Stock image:</strong>
+  <%= @stock.stock_image %>
+</p>
+
+<p>
+  <strong>Quantity currently in stock:</strong>
+  <%= @stock.quantity_currently_in_stock %>
+</p>
+
+<p>
+  <strong>Total ever in stock:</strong>
+  <%= @stock.total_ever_in_stock %>
+</p>
+
+<p>
+  <strong>Total ever sent:</strong>
+  <%= @stock.total_ever_sent %>
+</p>
+
+<p>
+  <strong>Total damaged or destroyed:</strong>
+  <%= @stock.total_damaged_or_destroyed %>
+</p>
+
+<p>
+  <strong>Parcel:</strong>
+  <%= @stock.parcel %>
+</p>
+
+<%= link_to 'Edit', edit_stock_path(@stock) %> |
+<%= link_to 'Back', stocks_path %>
