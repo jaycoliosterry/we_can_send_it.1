@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160811170124) do
+ActiveRecord::Schema.define(version: 20160811230630) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -150,6 +150,12 @@ ActiveRecord::Schema.define(version: 20160811170124) do
   end
 
   add_index "email_templates", ["user_id"], name: "index_email_templates_on_user_id"
+
+  create_table "express_countries", force: true do |t|
+    t.string  "Country"
+    t.integer "Zones"
+    t.integer "Vat"
+  end
 
   create_table "express_courier_prices", force: true do |t|
     t.datetime "created_at"
