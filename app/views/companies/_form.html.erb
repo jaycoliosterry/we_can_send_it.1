@@ -1,32 +1,130 @@
-<%= simple_form_for(@company) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :wcsi_admin %>
-    <%= f.input :company_name %>
-    <%= f.input :user_admin_id %>
-    <%= f.input :department %>
-    <%= f.input :shipping_address_line_1 %>
-    <%= f.input :shipping_address_line_2 %>
-    <%= f.input :shipping_postcode_or_zip %>
-    <%= f.input :shipping_city %>
-    <%= f.input :shipping_state_or_region %>
-    <%= f.input :shipping_country_id %>
-    <%= f.input :billing_address_line_1 %>
-    <%= f.input :billing_address_line_2 %>
-    <%= f.input :billing_city %>
-    <%= f.input :billing_state_or_region %>
-    <%= f.input :billing_country_id %>
-    <%= f.input :express_courier_rate_id %>
-    <%= f.input :economy_courier_rate_id %>
-    <%= f.input :postal_courier_rate_id %>
-    <%= f.input :billing_email_address %>
-    <%= f.input :main_telephone_number %>
-    <%= f.association :user %>
-    <%= f.association :invoice_line_item %>
+<%= form_for @company, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :wcsi_admin, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.check_box :wcsi_admin, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :company_name, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :company_name, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :user_admin_id, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :user_admin_id, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :department, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :department, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :shipping_address_line_1, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :shipping_address_line_1, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :shipping_address_line_2, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :shipping_address_line_2, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :shipping_postcode_or_zip, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :shipping_postcode_or_zip, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :shipping_city, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :shipping_city, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :shipping_state_or_region, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :shipping_state_or_region, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :shipping_country_id, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :shipping_country_id, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :billing_address_line_1, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :billing_address_line_1, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :billing_address_line_2, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :billing_address_line_2, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :billing_city, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :billing_city, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :billing_state_or_region, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :billing_state_or_region, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :billing_country_id, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :billing_country_id, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :express_courier_rate_id, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :express_courier_rate_id, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :economy_courier_rate_id, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :economy_courier_rate_id, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :postal_courier_rate_id, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.number_field :postal_courier_rate_id, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :billing_email_address, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.email_field :billing_email_address, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :main_telephone_number, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :main_telephone_number, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  companies_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

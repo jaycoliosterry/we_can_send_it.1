@@ -1,114 +1,62 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Company -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Company %></h1>
+</div>
 
-<p>
-  <strong>Wcsi admin:</strong>
-  <%= @company.wcsi_admin %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:wcsi_admin) %></dt>
+      <dd><pre class="prettyprint"><%= @company.wcsi_admin %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:company_name) %></dt>
+      <dd><pre class="prettyprint"><%= @company.company_name %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:user_admin_id) %></dt>
+      <dd><pre class="prettyprint"><%= @company.user_admin_id %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:department) %></dt>
+      <dd><pre class="prettyprint"><%= @company.department %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:shipping_address_line_1) %></dt>
+      <dd><pre class="prettyprint"><%= @company.shipping_address_line_1 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:shipping_address_line_2) %></dt>
+      <dd><pre class="prettyprint"><%= @company.shipping_address_line_2 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:shipping_postcode_or_zip) %></dt>
+      <dd><pre class="prettyprint"><%= @company.shipping_postcode_or_zip %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:shipping_city) %></dt>
+      <dd><pre class="prettyprint"><%= @company.shipping_city %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:shipping_state_or_region) %></dt>
+      <dd><pre class="prettyprint"><%= @company.shipping_state_or_region %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:shipping_country_id) %></dt>
+      <dd><pre class="prettyprint"><%= @company.shipping_country_id %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:billing_address_line_1) %></dt>
+      <dd><pre class="prettyprint"><%= @company.billing_address_line_1 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:billing_address_line_2) %></dt>
+      <dd><pre class="prettyprint"><%= @company.billing_address_line_2 %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:billing_city) %></dt>
+      <dd><pre class="prettyprint"><%= @company.billing_city %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:billing_state_or_region) %></dt>
+      <dd><pre class="prettyprint"><%= @company.billing_state_or_region %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:billing_country_id) %></dt>
+      <dd><pre class="prettyprint"><%= @company.billing_country_id %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:express_courier_rate_id) %></dt>
+      <dd><pre class="prettyprint"><%= @company.express_courier_rate_id %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:economy_courier_rate_id) %></dt>
+      <dd><pre class="prettyprint"><%= @company.economy_courier_rate_id %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:postal_courier_rate_id) %></dt>
+      <dd><pre class="prettyprint"><%= @company.postal_courier_rate_id %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:billing_email_address) %></dt>
+      <dd><pre class="prettyprint"><%= @company.billing_email_address %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:main_telephone_number) %></dt>
+      <dd><pre class="prettyprint"><%= @company.main_telephone_number %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Company name:</strong>
-  <%= @company.company_name %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              companies_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_company_path(@company), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              company_path(@company),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>User admin:</strong>
-  <%= @company.user_admin_id %>
-</p>
-
-<p>
-  <strong>Department:</strong>
-  <%= @company.department %>
-</p>
-
-<p>
-  <strong>Shipping address line 1:</strong>
-  <%= @company.shipping_address_line_1 %>
-</p>
-
-<p>
-  <strong>Shipping address line 2:</strong>
-  <%= @company.shipping_address_line_2 %>
-</p>
-
-<p>
-  <strong>Shipping postcode or zip:</strong>
-  <%= @company.shipping_postcode_or_zip %>
-</p>
-
-<p>
-  <strong>Shipping city:</strong>
-  <%= @company.shipping_city %>
-</p>
-
-<p>
-  <strong>Shipping state or region:</strong>
-  <%= @company.shipping_state_or_region %>
-</p>
-
-<p>
-  <strong>Shipping country:</strong>
-  <%= @company.shipping_country_id %>
-</p>
-
-<p>
-  <strong>Billing address line 1:</strong>
-  <%= @company.billing_address_line_1 %>
-</p>
-
-<p>
-  <strong>Billing address line 2:</strong>
-  <%= @company.billing_address_line_2 %>
-</p>
-
-<p>
-  <strong>Billing city:</strong>
-  <%= @company.billing_city %>
-</p>
-
-<p>
-  <strong>Billing state or region:</strong>
-  <%= @company.billing_state_or_region %>
-</p>
-
-<p>
-  <strong>Billing country:</strong>
-  <%= @company.billing_country_id %>
-</p>
-
-<p>
-  <strong>Express courier rate:</strong>
-  <%= @company.express_courier_rate_id %>
-</p>
-
-<p>
-  <strong>Economy courier rate:</strong>
-  <%= @company.economy_courier_rate_id %>
-</p>
-
-<p>
-  <strong>Postal courier rate:</strong>
-  <%= @company.postal_courier_rate_id %>
-</p>
-
-<p>
-  <strong>Billing email address:</strong>
-  <%= @company.billing_email_address %>
-</p>
-
-<p>
-  <strong>Main telephone number:</strong>
-  <%= @company.main_telephone_number %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @company.user %>
-</p>
-
-<p>
-  <strong>Invoice line item:</strong>
-  <%= @company.invoice_line_item %>
-</p>
-
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
