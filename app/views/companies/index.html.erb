@@ -1,12 +1,15 @@
 <%- model_class = Company -%>
 <div class="page-header">
   <h1><%=t '.title', :default => Company %></h1>
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+            new_company_path,
+            :class => 'btn btn-primary' %>
 </div>
  <div class="jumbotron" style="background:white;">
    <%= grid(@company_grid) do |g|
 
-    g.column name: 'Company Name', attribute: 'company_name' do |task|
-          link_to(companies.company_name, edit_company_path(task))
+    g.column name: 'Company Name', attribute: 'company_name' do |company|
+          link_to(company.company_name, edit_company_path(company))
     end
 
     g.column name: 'Department', attribute: 'department'
@@ -17,71 +20,3 @@
 
    end -%>
   </div> 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:wcsi_admin) %></th>
-      <th><%= model_class.human_attribute_name(:company_name) %></th>
-      <th><%= model_class.human_attribute_name(:user_admin_id) %></th>
-      <th><%= model_class.human_attribute_name(:department) %></th>
-      <th><%= model_class.human_attribute_name(:shipping_address_line_1) %></th>
-      <th><%= model_class.human_attribute_name(:shipping_address_line_2) %></th>
-      <th><%= model_class.human_attribute_name(:shipping_postcode_or_zip) %></th>
-      <th><%= model_class.human_attribute_name(:shipping_city) %></th>
-      <th><%= model_class.human_attribute_name(:shipping_state_or_region) %></th>
-      <th><%= model_class.human_attribute_name(:shipping_country_id) %></th>
-      <th><%= model_class.human_attribute_name(:billing_address_line_1) %></th>
-      <th><%= model_class.human_attribute_name(:billing_address_line_2) %></th>
-      <th><%= model_class.human_attribute_name(:billing_city) %></th>
-      <th><%= model_class.human_attribute_name(:billing_state_or_region) %></th>
-      <th><%= model_class.human_attribute_name(:billing_country_id) %></th>
-      <th><%= model_class.human_attribute_name(:express_courier_rate_id) %></th>
-      <th><%= model_class.human_attribute_name(:economy_courier_rate_id) %></th>
-      <th><%= model_class.human_attribute_name(:postal_courier_rate_id) %></th>
-      <th><%= model_class.human_attribute_name(:billing_email_address) %></th>
-      <th><%= model_class.human_attribute_name(:main_telephone_number) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @companies.each do |company| %>
-      <tr>
-        <td><%= company.wcsi_admin %></td>
-        <td><%= company.company_name %></td>
-        <td><%= company.user_admin_id %></td>
-        <td><%= company.department %></td>
-        <td><%= company.shipping_address_line_1 %></td>
-        <td><%= company.shipping_address_line_2 %></td>
-        <td><%= company.shipping_postcode_or_zip %></td>
-        <td><%= company.shipping_city %></td>
-        <td><%= company.shipping_state_or_region %></td>
-        <td><%= company.shipping_country_id %></td>
-        <td><%= company.billing_address_line_1 %></td>
-        <td><%= company.billing_address_line_2 %></td>
-        <td><%= company.billing_city %></td>
-        <td><%= company.billing_state_or_region %></td>
-        <td><%= company.billing_country_id %></td>
-        <td><%= company.express_courier_rate_id %></td>
-        <td><%= company.economy_courier_rate_id %></td>
-        <td><%= company.postal_courier_rate_id %></td>
-        <td><%= company.billing_email_address %></td>
-        <td><%= company.main_telephone_number %></td>
-        <td><%=l company.created_at, format: :long %></td>
-        <td>
-          <%= link_to company_path(company), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
-            <%= glyph 'info-sign' %>
-            <%= glyph 'pencil' %>
-          <%- end -%>
-          <%= link_to company_path(company), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
-            <%= glyph 'remove' %>
-          <%- end -%>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_company_path,
-            :class => 'btn btn-primary' %>
