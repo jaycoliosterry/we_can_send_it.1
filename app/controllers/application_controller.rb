@@ -13,7 +13,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_in)        { |u| u.permit(:login, :username, :email, :password, :remember_me) }
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:username, :email, :password, :password_confirmation, :current_password) }
   end
-
+  
+  include Pundit
+    protect_from_forgery
+  
 
   private
   
