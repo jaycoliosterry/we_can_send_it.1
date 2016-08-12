@@ -5,6 +5,8 @@ class CompaniesController < ApplicationController
   # GET /companies.json
   def index
     @companies = Company.all
+    @company_grid = initialize_grid(Company,
+                    per_page: 40)
   end
 
   # GET /companies/1

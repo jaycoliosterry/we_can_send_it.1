@@ -20,7 +20,9 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     @data = Stock.all
-    @addressdata = Address.all
+    @address_grid = initialize_grid(Address,
+     include: :recipients,
+     per_page: 40)
   end
 
   # GET /orders/1/edit

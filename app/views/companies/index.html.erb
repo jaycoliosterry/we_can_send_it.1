@@ -2,10 +2,24 @@
 <div class="page-header">
   <h1><%=t '.title', :default => Company %></h1>
 </div>
+ <div class="jumbotron" style="background:white;">
+   <%= grid(@company_grid) do |g|
+
+    g.column name: 'Company Name', attribute: 'company_name' do |task|
+          link_to('Edit', edit_company_path(task))
+    end
+
+    g.column name: 'Department', attribute: 'department'
+
+    g.column name: 'Company City', attribute: 'shipping_city'
+
+    g.column name: 'Added on', attribute: 'created_at'
+
+   end -%>
+  </div> 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>ID</th>
       <th><%= model_class.human_attribute_name(:wcsi_admin) %></th>
       <th><%= model_class.human_attribute_name(:company_name) %></th>
       <th><%= model_class.human_attribute_name(:user_admin_id) %></th>
@@ -33,7 +47,6 @@
   <tbody>
     <% @companies.each do |company| %>
       <tr>
-        <td><%= company.id %></td>
         <td><%= company.wcsi_admin %></td>
         <td><%= company.company_name %></td>
         <td><%= company.user_admin_id %></td>

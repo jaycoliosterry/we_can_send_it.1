@@ -25,27 +25,17 @@
   </table> 
   </div> 
   <div class="jumbotron" style="background:white;">
-  <h2>Choose where to send the stock</h2>
-  <table class="table">                         
-    <tr>                          
-      <th>Company Name</th>
-      <th>City</th>
-      <th>Select Address</th>
-    </tr>
-  <% @addressdata.each do |addressdata| %>       
-    <tr>
-      <td><%= addressdata.receiver_company_name %></td>  
-      <td><%= addressdata.city %></td>  
-      <td><input type="checkbox"></td>
-    </tr>
-  <% end %>                         
-    <tr>                          
-      <th></th>
-      <th></th>
-      <th></th>
-      <th><button class="btn btn-primary">Next</button></th>
-    </tr>                      
-  </table> 
+   <%= grid(@address_grid) do |g|
+
+    g.column name: 'Company Name', attribute: 'receiver_company_name'
+
+    g.column name: 'Main Contact', attribute: 'receiver_company_contact_name'
+
+    g.column name: 'Company City', attribute: 'city'
+
+    g.action_column
+
+   end -%>
   </div> 
   <div class="form-group">
     <%= f.label :delivery_status, :class => 'control-label col-md-2' %>
