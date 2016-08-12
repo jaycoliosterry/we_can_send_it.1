@@ -6,7 +6,7 @@
    <%= grid(@company_grid) do |g|
 
     g.column name: 'Company Name', attribute: 'company_name' do |task|
-          link_to(company.company_name, edit_company_path(task))
+          link_to(companies.company_name, edit_company_path(task))
     end
 
     g.column name: 'Department', attribute: 'department'
