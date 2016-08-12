@@ -1,0 +1,4 @@
+<div class="jumbotron">
+<p>Orders by Delivery Status</p>
+<%= bar_chart @orders.group(:delivery_status).count %>
+</div>

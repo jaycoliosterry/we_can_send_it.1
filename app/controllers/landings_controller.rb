@@ -1,7 +1,8 @@
 class LandingsController < ApplicationController
-  def index
-  end
-  def index
-  	@orders = Order.all
-  end
+    def index
+    	@orders = Order.all
+    end
+	def greet(name)
+  		puts "Hi there " + name
+	end
 end
