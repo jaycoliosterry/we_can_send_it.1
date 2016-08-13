@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   end
   resources :email_templates
 
-  resources :orders
 
   resources :addresses
 
@@ -22,9 +21,11 @@ Rails.application.routes.draw do
 
   resources :addressbooks
 
-  resources :companies
+  resources :companies do
+      resources :stocks
+  end
 
-  resources :stocks
+        resources :orders
 
   resources :parcels
 

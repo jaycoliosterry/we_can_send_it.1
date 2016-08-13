@@ -1,15 +1,19 @@
 class StocksController < ApplicationController
   before_action :set_stock, only: [:show, :edit, :update, :destroy]
-
+  before_filter :get_company
+  def get_company
+    @company = Company.find(params[:company_id])
+  end
   # GET /stocks
   # GET /stocks.json
   def index
-    @stocks = Stock.all
+    @stocks = @company.stocks
   end
 
   # GET /stocks/1
   # GET /stocks/1.json
   def show
+    @stock = @company.stocks.find(params[:id])
   end
 
   # GET /stocks/new

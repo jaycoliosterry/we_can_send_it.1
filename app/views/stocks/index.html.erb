@@ -46,7 +46,7 @@
         <td><%= stock.total_damaged_or_destroyed %></td>
         <td><%=l stock.created_at, format: :long %></td>
         <td>
-          <%= link_to stock_path(stock), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+          <%= link_to stock_path(company.stock), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
             <%= glyph 'info-sign' %>
             <%= glyph 'pencil' %>
           <%- end -%>
