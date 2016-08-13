@@ -21,7 +21,6 @@
       <th><%= model_class.human_attribute_name(:total_ever_in_stock) %></th>
       <th><%= model_class.human_attribute_name(:total_ever_sent) %></th>
       <th><%= model_class.human_attribute_name(:total_damaged_or_destroyed) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -44,9 +43,8 @@
         <td><%= stock.total_ever_in_stock %></td>
         <td><%= stock.total_ever_sent %></td>
         <td><%= stock.total_damaged_or_destroyed %></td>
-        <td><%=l stock.created_at, format: :long %></td>
         <td>
-          <%= link_to stock_path(company.stock), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+          <%= link_to stock_path(stock), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
             <%= glyph 'info-sign' %>
             <%= glyph 'pencil' %>
           <%- end -%>

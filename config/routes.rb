@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   end
   resources :email_templates
 
+  resources :orders do
+      resources :parcels
+  end
 
   resources :addresses
 
@@ -21,13 +24,9 @@ Rails.application.routes.draw do
 
   resources :addressbooks
 
-  resources :companies do
-      resources :stocks
-  end
+  resources :companies
 
-        resources :orders
-
-  resources :parcels
+  resources :stocks
 
   devise_for :users, controllers: {registrations: "users/registrations", sessions: "users/sessions", passwords: "users/passwords"}, skip: [:sessions, :registrations]
   devise_for :admin_users, ActiveAdmin::Devise.config
