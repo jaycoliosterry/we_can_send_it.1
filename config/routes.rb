@@ -11,8 +11,9 @@ Rails.application.routes.draw do
   resources :email_templates
 
   resources :orders do
-      resources :parcels
+    resources :parcels, except: [:index], controller: 'orders/parcels'
   end
+  resources :parcels
 
   resources :addresses
 

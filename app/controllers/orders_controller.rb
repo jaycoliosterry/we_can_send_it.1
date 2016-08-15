@@ -1,11 +1,9 @@
 class OrdersController < ApplicationController
 
   #->Prelang (scaffolding:rails/scope_to_user)
-  before_filter :require_user_signed_in, only: [:new, :edit, :create, :update, :destroy]
+  before_filter :require_user_signed_in, only: [:new, :create]
 
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
-
-  has_many :parcels
+  before_action :set_order, only: [:show]
   # GET /orders
   # GET /orders.json
   def index
@@ -15,6 +13,8 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    @order = Order.find(params[:id])
+    @parcels = @order.parcels
   end
 
   # GET /orders/new

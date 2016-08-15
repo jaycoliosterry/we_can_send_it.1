@@ -167,6 +167,8 @@ GEM
       has_scope (~> 0.6.0.rc)
       railties (>= 3.2, < 5)
       responders
+    invoicing (1.0.1)
+      rails (>= 3.2.13)
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -350,6 +352,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   font-awesome-sass (~> 4.3)
+  invoicing
   jbuilder (~> 2.0)
   jquery-rails
   omniauth
