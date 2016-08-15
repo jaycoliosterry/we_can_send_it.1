@@ -1,4 +1,4 @@
-class ParcelsController < ApplicationController
+class Orders::ParcelsController < ApplicationController
   before_action :set_parcel, only: [:show, :edit, :update, :destroy]
   # GET /parcels
   # GET /parcels.json
