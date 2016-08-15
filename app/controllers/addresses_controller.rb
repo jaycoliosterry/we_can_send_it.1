@@ -22,7 +22,6 @@ class AddressesController < ApplicationController
   def show
     @addresses = Address.all
     @address = Address.find(params[:id])
-    @expresscountries = @address.express_country
   end
 
   # GET /addresses/new

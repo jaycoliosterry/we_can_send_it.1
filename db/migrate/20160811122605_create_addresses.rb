@@ -11,7 +11,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.string :zip_or_postcode
       t.string :city
       t.string :state_or_region
-      t.integer :country_id
+      t.string :country_id
       t.string :brazilian_federal_tax_id
       t.string :brazilian_state_tax_id
       t.string :chinese_cr_code
