@@ -1,2 +1,0 @@
-class ExpressCountriesController < ApplicationController
-end
