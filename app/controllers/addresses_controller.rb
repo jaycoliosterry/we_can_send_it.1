@@ -23,7 +23,7 @@ class AddressesController < ApplicationController
   # GET /addresses/1.json
   def show
     @addresses = Address.all
-    @expresscountries = ExpressCountry.find(params[:id])
+    @expresscountry = ExpressCountry.find(params[:id])
   end
 
   # GET /addresses/new
