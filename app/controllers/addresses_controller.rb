@@ -21,12 +21,8 @@ class AddressesController < ApplicationController
   # GET /addresses/1.json
   def show
     @addresses = Address.all
-<<<<<<< HEAD
     @address = Address.find(params[:id])
     @expresscountries = @address.country_id
-=======
-    @expresscountries = ExpressCountry.find(params[:id])
->>>>>>> parent of 18b6ab3... Executed 'bundle install' to fetch and install required Ruby Gems
   end
 
   # GET /addresses/new
