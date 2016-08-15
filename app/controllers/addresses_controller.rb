@@ -1,4 +1,5 @@
 class AddressesController < ApplicationController
+
   #->Prelang (scaffolding:rails/scope_to_user)
   before_filter :require_user_signed_in, only: [:new, :edit, :create, :update, :destroy]
 
@@ -21,8 +22,7 @@ class AddressesController < ApplicationController
   # GET /addresses/1.json
   def show
     @addresses = Address.all
-    @address = Address.find(params[:id])
-    @expresscountries = @address.express_country
+    @expresscountries = ExpressCountry.find(params[:id])
   end
 
   # GET /addresses/new
