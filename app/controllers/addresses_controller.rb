@@ -16,11 +16,14 @@ class AddressesController < ApplicationController
   # GET /addresses.json
   def index
     @addresses = Address.all
+    @countries = Country.find(params[:id])
   end
 
   # GET /addresses/1
   # GET /addresses/1.json
   def show
+    @addresses = Address.all
+    @expresscountries = ExpressCountry.find(params[:id])
   end
 
   # GET /addresses/new

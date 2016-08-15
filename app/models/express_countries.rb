@@ -1,2 +1,3 @@
-class ExpressCountries < ActiveRecord::Base
+class ExpressCountry < ActiveRecord::Base
+	has_many :address 
 end
