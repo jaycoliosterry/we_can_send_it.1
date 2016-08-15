@@ -1,6 +1,6 @@
 <%- model_class = Order -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => Order %> - <%= @order.order_number %></h1>
+  <h1><%=t '.title', :default => Order %> - ORD_<%= @order.id %></h1>
 </div>
 
 <div class="fieldset">
@@ -14,7 +14,7 @@
       <dt class="label label-default"><%= model_class.human_attribute_name(:send_confirmation_emails_to_recipients) %></dt>
       <dd><pre class="prettyprint"><%= @order.send_confirmation_emails_to_recipients %></pre></dd>
       <dt class="label label-default"><%= model_class.human_attribute_name(:order_number) %></dt>
-      <dd><pre class="prettyprint"><%= @order.order_number %></pre></dd>
+      <dd><pre class="prettyprint">ORD_<%= @order.id %></pre></dd>
       <dt class="label label-default"><%= model_class.human_attribute_name(:total_order_weight) %></dt>
       <dd><pre class="prettyprint"><%= @order.total_order_weight %></pre></dd>
       <dt class="label label-default"><%= model_class.human_attribute_name(:wcsi_total_order_cost) %></dt>

@@ -10,7 +10,6 @@
       <th><%= model_class.human_attribute_name(:customer_comments) %></th>
       <th><%= model_class.human_attribute_name(:customer_uploaded_file) %></th>
       <th><%= model_class.human_attribute_name(:send_confirmation_emails_to_recipients) %></th>
-      <th><%= model_class.human_attribute_name(:order_number) %></th>
       <th><%= model_class.human_attribute_name(:total_order_weight) %></th>
       <th><%= model_class.human_attribute_name(:wcsi_total_order_cost) %></th>
       <th><%= model_class.human_attribute_name(:customer_total_order_cost_pre_tax) %></th>
@@ -24,12 +23,11 @@
   <tbody>
     <% @orders.each do |order| %>
       <tr>
-        <td><%= order.id %></td>
+        <td>ORD_<%= order.id %></td>
         <td><%= order.delivery_status %></td>
         <td><%= order.customer_comments %></td>
         <td><%= order.customer_uploaded_file %></td>
         <td><%= order.send_confirmation_emails_to_recipients %></td>
-        <td><%= order.order_number %></td>
         <td><%= order.total_order_weight %></td>
         <td><%= order.wcsi_total_order_cost %></td>
         <td><%= order.customer_total_order_cost_pre_tax %></td>

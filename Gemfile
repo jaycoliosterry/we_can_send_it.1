@@ -40,6 +40,7 @@ gem 'spring',        group: :development
 
 gem 'bundler'
 gem 'bootstrap-datepicker-rails'
+gem 'bootstrap-select-rails'
 gem 'pundit'
 gem 'prawn'
 gem 'prawn-table'
