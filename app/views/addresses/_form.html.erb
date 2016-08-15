@@ -58,7 +58,7 @@
     <div class="col-md-10">
       <%= f.select( :country_id,{},{},{ 'data-width' => "100%", :class => "selectpicker", "data-live-search" => "true"}) do %>
         <% ExpressCountries.pluck(:id, :country).each do |c| -%>
-          <%= content_tag(:option, c.last, value: c.last) %>
+          <%= content_tag(:option, c.last, value: c.first) %>
         <% end %>
       <% end %>
     </div>
